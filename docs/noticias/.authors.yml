@@ -1,0 +1,5 @@
+authors:
+  admin:
+    name: Administrador
+    description: Editor chefe do portal de notícias
+    avatar: https://api.dicebear.com/7.x/bottts/svg?seed=admin

@@ -1,0 +1,11 @@
+# Python env
+venv/
+.venv/
+ENV/
+
+# MkDocs compiled output
+site/
+
+# OS specific
+.DS_Store
+Thumbs.db

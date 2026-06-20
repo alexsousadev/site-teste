@@ -1,0 +1,29 @@
+backend:
+  name: github
+  repo: alexsousadev/site-teste
+  branch: main
+  auth_endpoint: api/auth
+
+# Habilita o backend local para desenvolvimento/testes locais.
+# Quando você estiver rodando localmente, o CMS irá salvar os arquivos diretamente
+# na sua máquina usando a porta 8081 (npx decap-server).
+local_backend: true
+
+media_folder: docs/assets/images
+public_folder: /assets/images
+
+collections:
+  - name: noticias
+    label: Notícias
+    label_singular: Notícia
+    folder: docs/noticias/posts
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Data de Publicação", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Resumo / Descrição", name: "description", widget: "text", required: false }
+      - { label: "Autores", name: "authors", widget: "list", default: ["admin"] }
+      - { label: "Categorias", name: "categories", widget: "list", default: ["Geral"] }
+      - { label: "Tags", name: "tags", widget: "list", default: ["noticias"] }
+      - { label: "Conteúdo da Notícia", name: "body", widget: "markdown" }
